@@ -1,0 +1,12 @@
+Genetic Algorithm Experiment 1 Results
+Parameters:
+  pop_size: 100
+  generations: 200
+  crossover_prob: 0.8
+  mutation_prob: 0.02
+  tournament_k: 3
+  seed: None
+
+Best result:
+  x = 4.74048126
+  y = 1.91511612

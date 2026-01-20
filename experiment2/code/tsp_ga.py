@@ -230,11 +230,10 @@ def run_ga(city_map: np.ndarray, pop_size=100, generations=300, crossover_prob=0
     n = city_map.shape[0]
     Dist = compute_distance_matrix(city_map)
 
-    # 预先准备输出目录以便在迭代中记录调试信息
-    if out_dir is None:
-        out_dir = os.path.join(os.getcwd(), '..', 'experiment2')
-    figures_dir = os.path.join(out_dir, 'figures')
-    results_dir = os.path.join(out_dir, 'results')
+    # 输出目录固定为相对于本文件的上级目录（退回到 experiment2），再访问 figures 和 results
+    base_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+    figures_dir = os.path.join(base_dir, 'figures')
+    results_dir = os.path.join(base_dir, 'results')
     debug_dir = os.path.join(results_dir, 'debug')
     os.makedirs(figures_dir, exist_ok=True)
     os.makedirs(results_dir, exist_ok=True)
